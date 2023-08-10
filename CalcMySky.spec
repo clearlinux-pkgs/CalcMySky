@@ -4,10 +4,10 @@
 # Using build pattern: cmake
 #
 Name     : CalcMySky
-Version  : 0.3.0
-Release  : 1
-URL      : https://github.com/10110111/CalcMySky/archive/refs/tags/v0.3.0.tar.gz
-Source0  : https://github.com/10110111/CalcMySky/archive/refs/tags/v0.3.0.tar.gz
+Version  : 0.3.1
+Release  : 2
+URL      : https://github.com/10110111/CalcMySky/archive/v0.3.1/CalcMySky-0.3.1.tar.gz
+Source0  : https://github.com/10110111/CalcMySky/archive/v0.3.1/CalcMySky-0.3.1.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-3.0
@@ -78,15 +78,15 @@ license components for the CalcMySky package.
 
 
 %prep
-%setup -q -n CalcMySky-0.3.0
-cd %{_builddir}/CalcMySky-0.3.0
+%setup -q -n CalcMySky-0.3.1
+cd %{_builddir}/CalcMySky-0.3.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689724490
+export SOURCE_DATE_EPOCH=1691704025
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -109,7 +109,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 cd clr-build; make test
 
 %install
-export SOURCE_DATE_EPOCH=1689724490
+export SOURCE_DATE_EPOCH=1691704025
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/CalcMySky
 cp %{_builddir}/CalcMySky-%{version}/COPYING %{buildroot}/usr/share/package-licenses/CalcMySky/31a3d460bb3c7d98845187c716a30db81c44b615 || :
